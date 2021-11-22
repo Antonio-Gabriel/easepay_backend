@@ -57,3 +57,7 @@ Inicializamos o desenvolvimento da aplicação praticamente agora então podemos
 | ------ |
 | 0.1    |
 
+
+## License
+
+Copyright (c) 2021 **António Campos Gabriel**
