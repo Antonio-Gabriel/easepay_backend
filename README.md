@@ -1,4 +1,4 @@
-<img src="easyPay-logo.jpg" alt="Easepayment logo">
+<img src="easyPay-logo.jpg" alt="Easepayment logo" height="400px">
 
 # Easepayment - Pagamento fácil :blush:
 
