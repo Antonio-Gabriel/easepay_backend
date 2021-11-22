@@ -40,9 +40,9 @@ A arquitetura que será utilizada para desenvolvimento dessa aplicação será a
 
 Facilitando assim a possível migração de determinados recursos nela.
 
-## Linguagem backend
+## Linguagem backend e Base de dados
 
-Será desenvolvida com `python`
+Será desenvolvida com `python`, para a base de dados estaremos trabalhando com o `Mysql`
 
 ### Diferenciais da aplicação
 
