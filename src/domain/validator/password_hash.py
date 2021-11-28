@@ -8,7 +8,7 @@ class PasswordHash:
     DIGEST_SIZE = 20
 
     @classmethod
-    def Enctrypt(cls, password: str) -> bytes:
+    def Encrypt(cls, password: str) -> bytes:
         """Enctrypt password"""
 
         if password:
@@ -20,7 +20,7 @@ class PasswordHash:
     def isValidPassword(cls, current_pass: str, comparison_pass: bytes) -> bool:
         """Check if password is valid"""
 
-        password_generate = cls.Enctrypt(current_pass)
+        password_generate = cls.Encrypt(current_pass)
         if not compare_digest(password_generate, comparison_pass):
             return False
 

@@ -9,7 +9,7 @@ class Account:
     def password_encrypt(self) -> bytes:
         """Enctrypt password"""
 
-        return PasswordHash.Enctrypt(self.password)
+        return PasswordHash.Encrypt(self.password)
 
     def password_verify(self, comparison_pass: bytes) -> bool:
         """Verify if password is valid or not"""
