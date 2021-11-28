@@ -8,5 +8,7 @@ class User:
         self.email = email
 
     def is_valid_email_address(self) -> bool:
+        """ Verify if the email address is valid"""
+
         expretion = r"^[a-zA-Z0-9._-]+@([a-z0-9]+)(\.[a-z]{2,3})+$"
         return True if re.search(expretion, self.email) is not None else False
