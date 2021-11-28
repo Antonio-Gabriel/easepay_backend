@@ -2,7 +2,8 @@ from ..validator import PasswordHash
 
 
 class Account:
-    def __init__(self, permition_code: int, password: str):
+    def __init__(self, permition_code: int, password: str, id: int = None):
+        self.id = id
         self.permition_code = permition_code
         self.password = password
 
