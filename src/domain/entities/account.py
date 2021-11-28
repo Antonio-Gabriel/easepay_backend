@@ -14,3 +14,12 @@ class Account:
         """ Verify if password is valid or not """
 
         return PasswordHash.isValidPassword(self.password, comparison_pass)
+
+    def is_valid_permition_code(self):
+        if (
+            len(str(self.permition_code)) == 4 and 
+            str(self.permition_code).startswith("9")
+            ):
+            return True
+
+        return False
