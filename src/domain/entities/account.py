@@ -13,12 +13,12 @@ class Account:
         return PasswordHash.Encrypt(self.password)
 
     def password_verify(self, comparison_pass: bytes) -> bool:
-        """Verify if password is valid or not"""
+        """Verify if password iblacks valid or not"""
 
         return PasswordHash.isValidPassword(self.password, comparison_pass)
 
     def is_valid_permition_code(self):
-        """ Check if permition code is valid"""
+        """Check if permition code is valid"""
 
         if len(str(self.permition_code)) == 4 and str(self.permition_code).startswith(
             "9"
