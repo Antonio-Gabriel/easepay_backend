@@ -1,8 +1,10 @@
+from typing import List
+
+
 class PhoneNumber:
-    def __init__(self, phone: int, user_id: int, id: int = None):
+    def __init__(self, phone: List[int], id: int = None):
         self.id = id
         self.phone = phone
-        self.user = user_id
 
         self.__contant_list = []
 
