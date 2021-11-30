@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from typing import Type
 
 from .wallet import Wallet
@@ -27,8 +27,7 @@ class UserAccount:
         """verify null or empty attribute"""
 
         if not (
-            self.account.permition_code > 0
-            and self.account.password != ""
+            self.account.password != ""
             and self.user.full_name != ""
             and self.user.email != ""
         ):
