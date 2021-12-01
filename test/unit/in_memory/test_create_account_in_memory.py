@@ -14,17 +14,19 @@ class TestCreateAccountInMemory(TestCase):
     def test_create_account_in_memory(self):
 
         create_account = CreateAccount(UserAccountInMemoryRepository())
-        create_account.execute(
+        response = create_account.execute(
             IUserAccountRequestDto(
                 account=Account(9872, "antonio"),
                 user=User(
-                    "António Gabriel", "exemplo@gmail.com", PhoneNumber(989877666)
+                    "António Gabriel",
+                    "exemplo@gmail.com",
+                    PhoneNumber([989877666, 998983455]),
                 ),
                 state=True,
-                wallet=Wallet(),
+                wallet=Wallet(12.00),
                 created_at=datetime.now(),
                 updated_at=datetime.now(),
             )
         )
-
-        self.assertTrue(True)
+        print(response)
+        self.assertIsInstance(response, list)
