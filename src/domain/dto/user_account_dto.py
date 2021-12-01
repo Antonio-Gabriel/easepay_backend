@@ -10,8 +10,8 @@ class IUserAccountRequestDto:
     user: User
     wallet: Wallet
     state: bool = True
-    updated_at: datetime = None
-    created_at: datetime = None
+    created_at: datetime = datetime.now()
+    updated_at: datetime = datetime.now()
 
     def __post_init__(self):
         """Raise exception"""
