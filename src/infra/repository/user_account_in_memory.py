@@ -50,7 +50,7 @@ class UserAccountInMemoryRepository(IAccountRepository):
     def update_account(self, user_account: Type[UserAccount]) -> UserAccount:
         """Update account"""
 
-        hash_pass = user_account.account.password_encrypt()        
+        hash_pass = user_account.account.password_encrypt()
         object_assigned = {
             **self.__storage[0],
             "name": user_account.user.full_name,
