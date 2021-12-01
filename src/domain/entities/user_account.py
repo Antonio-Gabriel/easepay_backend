@@ -13,14 +13,14 @@ class UserAccount:
         user: Type[User],
         wallet: Type[Wallet],
         state: bool = True,
-        updated_at: datetime = None,
         created_at: datetime = None,
+        updated_at: datetime = None,
     ):
         self.account = account
         self.user = user
         self.wallet = wallet
         self.state = state
-        self.updated_at = created_at
+        self.created_at = created_at
         self.updated_at = updated_at
 
     def is_null_or_empty_attr(self):
