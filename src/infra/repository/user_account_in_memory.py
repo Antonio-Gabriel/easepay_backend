@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import Type, Union
+from typing import List, Type, Union
 from uuid import uuid4
+
 
 from ...domain.repositories import IAccountRepository
 from ...domain.entities import UserAccount
@@ -23,7 +24,9 @@ class UserAccountInMemoryRepository(IAccountRepository):
             }
         ]
 
-    def create_account(self, user_account: Type[UserAccount]) -> Union[list, dict]:
+    def create_account(
+        self, user_account: Type[UserAccount]
+    ) -> Union[List[UserAccount], dict]:
         """Create a new account"""
 
         try:
@@ -47,7 +50,7 @@ class UserAccountInMemoryRepository(IAccountRepository):
         except Exception as ex:
             return {"error": ex.args}
 
-    def update_account(self, user_account: Type[UserAccount]) -> UserAccount:
+    def update_account(self, user_account: Type[UserAccount]) -> List[UserAccount]:
         """Update account"""
 
         hash_pass = user_account.account.password_encrypt()
@@ -64,3 +67,12 @@ class UserAccountInMemoryRepository(IAccountRepository):
         self.__storage[0] = object_assigned
 
         return self.__storage
+
+    def forgot_account(self, email_address: str) -> UserAccount:
+        """forgot account"""
+
+        user_account = list(
+            filter(lambda user: user["email"] == email_address, self.__storage)
+        )
+
+        return user_account
