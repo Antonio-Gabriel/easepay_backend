@@ -1,5 +1,8 @@
+from _decimal import Decimal
+
+
 class Wallet:
-    def __init__(self, amount: float = 0.00, id: int = None):
+    def __init__(self, amount: Decimal = 0.00, id: int = None):
         self.id = id
         self.amount = amount
 
