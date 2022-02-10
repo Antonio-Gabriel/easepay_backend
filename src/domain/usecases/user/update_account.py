@@ -5,6 +5,8 @@ from ...dto import IUserAccountRequestDto
 
 from ....adapters import UserAccountAdapter
 
+from ...validator import Email
+
 
 class UpdateAccount:
     def __init__(self, user_account_interface: Type[IAccountRepository]):
@@ -38,7 +40,7 @@ class UpdateAccount:
         if not user_account.account.is_valid_permition_code():
             raise Exception("Permition code is invalid")
 
-        if not user_account.user.is_valid_email_address():
+        if not Email.is_valid_email_address(user_account.user.email):
             raise Exception("Invalid email, pleace check the email...")
 
         if not user_account.user.phone_number.is_valid_phone_number_of_list():

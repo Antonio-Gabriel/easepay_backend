@@ -1,24 +1,26 @@
-import re
+import datetime
 from typing import Type
 
-from .phone_number import PhoneNumber
+from .owner import Owner
+from .account import Account
+from .student import Studant
 
 
 class User:
     def __init__(
         self,
-        full_name: str,
-        email: str,
-        phone_number: Type[PhoneNumber],
+        account: Type[Account],
+        owner: Type[Owner],
+        studant: Type[Studant],
+        created_at: datetime,
+        updated_at: datetime,
+        state: bool = True,
         id: int = None,
     ):
         self.id = id
-        self.full_name = full_name
-        self.email = email
-        self.phone_number = phone_number
-
-    def is_valid_email_address(self) -> bool:
-        """Verify if the email address is valid"""
-
-        expretion = r"^[a-zA-Z0-9._-]+@([a-z0-9]+)(\.[a-z]{2,3})+$"
-        return True if re.search(expretion, self.email) is not None else False
+        self.account = account
+        self.owner = owner
+        self.studant = studant
+        self.state = state
+        self.created_at = created_at
+        self.updated_at = updated_at

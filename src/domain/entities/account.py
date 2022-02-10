@@ -2,9 +2,9 @@ from ..validator import PasswordHash
 
 
 class Account:
-    def __init__(self, permition_code: int, password: str, id: int = None):
+    def __init__(self, username: str, password: str, id: int = None):
         self.id = id
-        self.permition_code = permition_code
+        self.username = username
         self.password = password
 
     def password_encrypt(self) -> bytes:
@@ -16,13 +16,3 @@ class Account:
         """Verify if password iblacks valid or not"""
 
         return PasswordHash.isValidPassword(self.password, comparison_pass)
-
-    def is_valid_permition_code(self):
-        """Check if permition code is valid"""
-
-        if len(str(self.permition_code)) == 4 and str(self.permition_code).startswith(
-            "9"
-        ):
-            return True
-
-        return False

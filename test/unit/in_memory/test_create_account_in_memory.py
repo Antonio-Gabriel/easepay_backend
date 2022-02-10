@@ -1,5 +1,6 @@
 from datetime import datetime
 from unittest import TestCase
+
 from src.domain.entities.phone_number import PhoneNumber
 from src.domain.entities.user import User
 from src.domain.entities.wallet import Wallet
@@ -16,7 +17,7 @@ class TestCreateAccountInMemory(TestCase):
         create_account = CreateAccount(UserAccountInMemoryRepository())
         response = create_account.execute(
             IUserAccountRequestDto(
-                account=Account(9872, "antonio"),
+                account=Account(9872, "antonioa"),
                 user=User(
                     "António Gabriel",
                     "exemplo@gmail.com",
