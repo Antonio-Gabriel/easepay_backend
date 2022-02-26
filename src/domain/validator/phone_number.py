@@ -1,21 +1,11 @@
-from typing import List
+import re
 
 
 class PhoneNumber:
-    def __init__(self, phone: List[int], id: int = None):
-        self.id = id
-        self.phone = phone        
-
-    def is_valid_phone_number(self):
+    @staticmethod
+    def is_valid_phone_number(phone: str):
         """Returns true if the phone number is valid"""
 
-        return True if (len(str(self.phone)) == 9) else False
+        expretion = r"/^(?:(\+244|00244))?(9)(1|2|3|4|9)([\d]{7,7})$/ix"
 
-    def is_valid_phone_number_of_list(self) -> bool:
-        """Returns true if the phone number is valid"""
-
-        for number in self.phone:
-            if not len(str(number)) == 9:
-                return False
-
-        return True
+        return True if re.search(expretion, phone) is not None else False

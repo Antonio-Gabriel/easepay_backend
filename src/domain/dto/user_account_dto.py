@@ -1,14 +1,14 @@
 from datetime import datetime
 from dataclasses import dataclass, fields
 
-from ..entities import Account, User, Wallet
+from ..entities import Account, Owner, Studant
 
 
 @dataclass(frozen=True)
 class IUserAccountRequestDto:
     account: Account
-    user: User
-    wallet: Wallet
+    owber: Owner
+    student: Studant
     state: bool = True
     created_at: datetime = datetime.now()
     updated_at: datetime = datetime.now()

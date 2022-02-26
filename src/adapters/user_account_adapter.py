@@ -1,22 +1,16 @@
 from decimal import Decimal
 from typing import List
-from ..domain.entities import UserAccount, User, Account, Wallet, PhoneNumber
+from ..domain.entities import User, Account, Owner, Studant
 
 
 class UserAccountAdapter:
     @staticmethod
-    def create(
-        permition_code: int,
-        password: str,
-        full_name: str,
-        email: str,
-        phone: List[int],
-        amonut: Decimal = 0.00,
-    ):
+    def create(username: str, password: str, name: str, phone: str, email: str):
         """Useraccount adapter"""
 
-        return UserAccount(
-            account=Account(permition_code, password),
-            user=User(full_name, email, PhoneNumber(phone)),
-            wallet=Wallet(amonut),
-        )
+        return User(
+            account=Account(username, password),
+            owner=Owner(name, phone, email),
+            studant=Studant()
+        )                        
+       

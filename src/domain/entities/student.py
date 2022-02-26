@@ -9,7 +9,7 @@ class Studant:
         name: str,
         process: int,
         email: str,
-        phone: int,
+        phone: str,
         district: str,
         location: str,
         avatar: str,
